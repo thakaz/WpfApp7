@@ -74,10 +74,14 @@ namespace WpfApp7
 
                 using (DataSet dataSet = new DataSet())
                 {
-                    String sql = "SELECT TITLE , RANK FROM GAME_EVALUATE";
+                    String sql = @"select
+                                   TITLE 
+                                    , RANK 
+                                from
+                                GAME_EVALUATE";
                     SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sql, conn);
                     dataAdapter.Fill(dataSet);
-                    this.ReviewListViewGrid.AutoGenerateColumns = false;
+                    this.ReviewListViewGrid.AutoGenerateColumns = true;
                     this.ReviewListViewGrid.DataContext = dataSet.Tables[0].DefaultView;
                 }
                 conn.Close();

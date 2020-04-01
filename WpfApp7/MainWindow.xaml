@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="AddReviewBtn" Content="レビューを追加" HorizontalAlignment="Left" Click="AddReviewBtn_Click" Margin="30,361,0,34"/>
-        <DataGrid x:Name="ReviewListViewGrid" ItemsSource="{Binding Mode=OneWay}" Margin="30,30,30,100"/>
+        <DataGrid x:Name="ReviewListViewGrid" ItemsSource="{Binding Mode=OneWay}" Margin="0"/>
         <Button x:Name="ShowReviewBtn" Content="レビューを追加" HorizontalAlignment="Left" Click="ShowReviewBtn_Click" Margin="663,361,0,34"/>
 
     </Grid>
