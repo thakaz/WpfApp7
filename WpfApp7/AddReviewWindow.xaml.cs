@@ -22,6 +22,7 @@ namespace WpfApp7
         public AddReviewWindow()
         {
             InitializeComponent();
+            this.DataContext = new GameInfo("A","B","C","D");
         }
 
         private void AddGameEvaluationToDb()
@@ -32,11 +33,13 @@ namespace WpfApp7
 
                 using(DataSet dataSet = new DataSet()) { 
                     
-                    if(this.GameTitleText.Text != String.Empty)
+                    if(this.titleTxt.Text != String.Empty)
                     {
-                        String sql = String.Format("INSERT INTO GAME_EVALUATE (TITLE,RANK) VALUES('{0}','AAA')",
-                            this.GameTitleText.Text,
-                            this.GameEvaluationText);
+                        String sql = String.Format(@"INSERT INTO GAME_EVALUATE (TITLE,DEVELOPER,PUBLISHER, RANK) VALUES('{0}','{1}','{2}','{3}')",
+                            this.titleTxt.Text,
+                            this.DeveloperTxt.Text,
+                            this.PublisherTxt.Text,
+                            this.RankList.Text);
 
                         SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sql, conn);
                         dataAdapter.Fill(dataSet);
