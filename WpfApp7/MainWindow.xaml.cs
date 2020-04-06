@@ -34,8 +34,10 @@ namespace WpfApp7
                 {
 
                     StringBuilder sb = new StringBuilder();
-                    sb.Append("CREATE TABLE IF NOT EXISTS GAME_EVALUATE(");
+                    sb.Append("create table if not  exists GAME_EVALUATE(");
                     sb.Append("TITLE TEXT NOT NULL");
+                    sb.Append(",DEVELOPER TEXT NOT NULL");
+                    sb.Append(",PUBLISHER TEXT NOT NULL");
                     sb.Append(",RANK TEXT NOT NULL");
                     sb.Append(")");
 
@@ -75,7 +77,9 @@ namespace WpfApp7
                 using (DataSet dataSet = new DataSet())
                 {
                     String sql = @"select
-                                   TITLE 
+                                   TITLE
+                                   , DEVELOPER
+                                   , PUBLISHER
                                     , RANK 
                                 from
                                 GAME_EVALUATE";
