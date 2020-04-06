@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,6 +58,12 @@ namespace WpfApp7
         {
             AddGameEvaluationToDb();
             this.Close();
+        }
+
+        private void AddImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            GameImage.Source = ImageUtil.FileToBitmapImage();
+
         }
     }
 }
